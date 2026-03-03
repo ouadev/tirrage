@@ -12,17 +12,17 @@ Usage:
 
 $ tirra COMMAND [ARGUMENTS]
 
-tirra  ver
-tirra  decrypt	IN_FILE OUT_FILE
-tirra  encrypt	IN_FILE OUT_FILE 
+tirrage  ver
+tirrage  decrypt  IN_FILE OUT_FILE
+tirrage  encrypt  IN_FILE OUT_FILE 
 
 
 COMMANDS
        ver    Display the version information and exit.
        decrypt
-              Decrypt a file that was encrypted using Age v1/scrypt recipient stanza.
+              Decrypt a file that was encrypted using Age v1/scrypt recipient type.
        encrypt
-              Encrypt a plaintext file using Age v1/scrypt recipient stanza
+              Encrypt a plaintext file using Age v1/scrypt recipient type.
 
 ARGUMENTS
        IN_FILE & OUT_FILE
@@ -55,7 +55,7 @@ pub fn process(args: &Vec<String>, args_count: usize) {
     }
 
     if cli_action == CliAction::Version {
-        println!("tirrage {}", VERSION);
+        println!("tirrage v{}", VERSION);
     } else if cli_action == CliAction::Decrypt {
         if args_count != 4 {
             println!("{}", USAGE_STR);
